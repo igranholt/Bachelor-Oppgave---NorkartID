@@ -1,0 +1,160 @@
+\chapter{Teoridel}
+\label{chap:teoridel}
+Dette kapittelet er ment som et oppslagsverk for resten av rapporten, ettersom rapporten er bassert på mye teknologi som var ukjent for prosjektgruppen samt at oppdragsgiver har ytret ønske om en oppsummert innføring om ulike teknologier og begreper som omtales i rapporten. 
+
+\section{Autentisering}
+\label{sec:teoridel_autentisering}
+Definisjonsjon på autentisering:
+\\
+\begin{quote}
+Å bevise at man er den man utgir seg for å være. Autentisering skal bekrefte en påstått identitet. Dette kan skje gjennom noe du vet (passord), noe du er (fingeravtrykk/ biometri) eller noe du har (nøkkelkort). Kombinasjoner av disse er også mye brukt. Den som autentiseres kan være en person som bruker en datamaskin, kun en datamaskin eller et program.
+\end{quote}
+\\
+Kilde: Norsk senter for informasjons sikring (NorSIS) \cite{NorsisLeksikonAutentisering}.
+\\
+\\
+I denne rapporten er autentisering knyttet til menneske-til-maskin og maskin-til-maskin autentisering. Det er også en form for autentisering som kalles menneske-til-menneske autentisering. Dette kan være bruk av pass og signatur kontroll for at du som menneske, bekrefter ovenfor et annet menneske at du er den du utgir deg for å være. Historisk sett kan vi sammenligne autentiseringsproblematikken med og bekrefte eller avkrefte om en gjenstand er laget av et menneske som påstår at gjenstanden er laget av han. Den samme utfordringen må løses i maskinverden for og autentisere på en sikker måte.
+
+\subsection*{Prinsipp}
+Menneske-til-maskin autentisering er noe som foregår mellom et menneske, typisk en bruker av maskinressurs og en maskin, som inneholder eller gir tilgang til maskinressursen. Som bruker av en maskinressurs skal man bekrefte for maskinen at du er den du utgir deg for å være, man lager da egne brukere for hver enkelt bruker av maskinressursen. En bruker kan gi seg til kjenne ved å oppgi et brukernavn og et passord. Om maskinen gjenkjenner brukernavn og passord fra tidligere oppgitte brukerprofiler vil maskinen tillatte tilgang til maskinressursen. Om man bruker passord for og bekrefte at du er eieren av brukernavnet så kaller vi ofte passordet for nøkkelen, om man bruker fingeravtrykk eller ansiktsgjekjenning regnes dette som nøkklene. En maskinressurs kan eksempelvis være en smarttelefon, en webapplikasjon eller et operativsystem, man kan i prinsippet autentiseres for å få tilgang til hva som helst av beskyttet innhold.
+\\
+\\
+Maskin-til-maskin autentisering gjøres på nesten samme måte som menneske-til-maskin, forskjellen er bare at maskinene har lagret nøkkelen på forhånd. Det er ulike former for metoder og teknologier som kan brukes for og beskytte mot misbruk av nøklene som er lagret. Dette skal vi ikke gå inn på i denne rapporten, da dette er noe som blir løst av rammeverkene og protokollene som eventuelt vil bli brukt.  
+
+\subsection*{Utfordringer}
+Gitt at brukernavnet skal være enkelt for en bruker å huske, velger bruker ofte et brukernavn som er relativt logsik bygd opp, i forhold til eget navn, stilling eller rolle i systemet brukeren skal ha tilgang til. Dette gjør det enkelt for andre å gjette brukernavnet. Om brukernavnet også er mailaddressen til brukeren, ønsker man kanskje at andre skal vite om brukernavnet ditt også, så man sprer brukernavnet til så mange som mulig. 
+\\
+\\
+Passordet, eller nøkkelen som brukes for og bekrefte at brukeren er den brukeren utgir seg for å være bør også være noe som brukeren enkelt kan huske. Ideelt sett så skal denne nøkkelen være noe som er enkelt for brukeren og huske eller bevise, men vanskelig for andre og gjette eller simulere. Sikkerhetsrapporter og undersøkelser viser at mennesker ser ut til å være så redd for å glemme passordet sitt at de velger heller et enkelt passord, framfor et vanskelig som vil beskytte brukerkontoen mye bedre mot uautorisert bruk. Et eksempel på en rapport som viser dette er Trustware sin Global Security Report fra 2014 \cite{TruswareGlobalSecurityReport2014}. Denne rapporten påstår at en tredjedel av alle saker knyttet til uautorisert tilgang de etterforsket i 2014, var som følge av et svakt passord. En god autentiseringsmekanisme bør derfor kreve at brukeren må lage et sterkt passord og eventult at brukeren autentiserer seg med andre metoder enn bare passord. Eksempelvis engangskoder man får på SMS, fingeravtrykk eller ansikstgjenkjenning. 
+\\
+\\
+Det er mulig å designe et system som hjelper brukere og være flinke til å velge sterkere nøkkel. I tillegg kan vi designe autentiseringssystemet slik at det kreves to-faktor autentisering for og autentiseres. To-faktor kan brukes hver gang man forsøker å autentisere seg, eller bare ved tilfeldig utvalgte autentiseringsforsøk.
+
+\section{Autorisasjon}
+\label{sec:teoridel_autorisasjon}
+Definisjonsjon på autorisering: \\
+\begin{quote}
+Autorisering er prosessen med å beslutte å gi en person, en datamaskin eller et program tillatelse til å bruke bestemte IT-ressurser. Eksempler på en IT-ressurs kan være filer, nettverksstasjoner og prosesser.
+\end{quote} \\
+Kilde: Norsk senter for informasjons sikring (NorSIS) \cite{NorsisLeksikonAutorisering}. \\
+\subsection*{Prinsipper}
+Autorisasjon i forhold til datasystemer dreier seg om å avgjøre hva en bruker skal få tilgang til og ikke. En autorisasjon skjer etter at en bruker er vellykket autentisert (se seksjon \ref{sec:teoridel_autentisering}). Vi kan dele autorisasjonsprosessen inn i to faser. Første fase er og avgjøre hva en bruker skal ha tilgang til og ikke, altså å definere tilganger, vi kaller dette definisjonsfasen. Andre fase er og godkjenne eller ikke godkjenne forespørsler om tilgang til ressurser bassert på hva som er definert i fase 1, vi kaller dette godkjenningsfasen. Alle tilganger ligger i en form for brukerdatabase, denne kan være implementert på svært ulike måter avhengig av system og bruk. \\
+\\
+Datasystemer bruker autorisasjon for og skille brukere fra hverandre, slik at brukere og brukergrupper kun har tilgang til ressurser de er godkjent for å ha tilgang til.
+
+\subsection*{Utfordringer}
+Definisjonsfasen av et system kan være utfordrende når det er mange grupper og medlemmer i brukerdatabasen.  Det å ha kontroll på hva ulike grupper og medlemmer skal ha tilgang til, å kanskje spesielt hva de ikke skal ha tilgang til kan fort bli en krevende jobb. Det er derfor vanlig og definere reglene i en form for policy. De som tradisjonelt har utført tilgangstildelinger i definisjonsfasen er administratorer og brukerdatabase eksperter.  \\
+\\
+Det kan tenkes at det ikke nødvendigvis er administratoren for brukerdatabasen som vet om brukeren faktisk skal få tilgang eller ikke. Dersom administratoren må dobbeltsjekke at brukeren kan få tilgang til en gruppe fra gruppeeier, før brukeren får tilgangen innvilget, vil dette kunne ta tid. Et godt autoriseringssystem gir spesielt utvalgte brukere i ulike grupper, ofte kalt gruppeeiere, tilgang til og fjerne eller legge til rettigheter på andre brukere for bestemte grupper. Om brukeradministrasjonssystemet gir mulighet for slike gruppeeiere, bør systemet designes for å være så enkelt som mulig for å hindre uønskede brukerfeil av gruppeiere.
+
+\section{Single Sign On}
+\label{sec:teoridel_singleSignOn}
+SingleSignOn (SSO) er et begrep for å beskrive at man kan bruke en brukerautentisering som allerede er vellykket for å automatisk logge deg inn på andre tilknyttede systemer. Når et system har denne egenskapen kan en bruker logge inn en gang og få tilgang til andre systemer uten å bli spurt igjen om å logge inn på hver av dem\cite{SSOLogg}. Typisk blir dette håndtert ved bruk av en Lightweight Directory Access Protocol\cite{SSOLDAP}(LDAP\footnote{Lightweight Directory Access Protocol (LDAP) er en protokoll som brukes til oppslag i en katalogtjeneste på en server.}) og en database med brukere. \\
+\\
+SingleSignOn er vanlig på intranett nivå eksempelvis internt i en bedrift, de siste årene har det blitt mer vanlig med implementasjon av "identity providere" som gjør det mulig å bruke en brukers identitet i en annen applikasjon for å logge inn på tilknyttede applikasjoner. To eksempler på selskaper som tilbyr dette er facebook og google, begge selskapene gir muligheter for andre applikasjoner å bruke dem som identity providere, slik at brukerene får en følelse av SingleSignOn. Ofte må brukerne her fortelle applikasjonen at brukeren ønsker å logge inn ved bruk av eksisterende autentisering igjennom facebook eller google. Denne type innlogging gir heller ikke alltid samme sikkerhet for SingleSignOut, det er ikke gitt at om du logger ut fra facebook eller gooogle kontoen din at du logger ut fra applikasjonene som har brukt dem som "identity providere". \\
+\\
+Siden ulike autentiseringsmekasnismer fungerer på ulike måter må en SSO tjeneste lagre og oversette legitimasjon den mottar fra sin første autentisering og sende den til alle tjenestene det måtte gjelde. Det er viktig at identitetshåndteringen relatert med SSO løsningen holdes oppdatert i alle ledd angående autentisering da det er viktig å få spredd endringer og nye opprettelser av identiter. \cite{SSOProblemer}
+
+\section{Microsoft Active Directory}
+\label{sec:teoridel_microsoftActiveDirectory}
+Microsoft Active Directory (AD) er en LDAP server, altså en katalogtjeneste fra Microsoft. Den brukes for å tildele ressurser til brukere og brukergrupper, både eksternt og internt, i en bedrift. AD kan sees på som en spesialdesignet database som er designet for å fungere veldig godt på små lese og søke operasjoner men ikke så godt på endringer og oppdateringer av. AD er bygd opp av objekter. Et objekt kan være et system, en ressurs eller en tjeneste.\cite{AD}\\
+\\
+AD ble lansert i 1999, i Windows Server 2000 og har siden det gradvis blitt forbedret og videreutviklet i takt med nyere versjoner av operativsystemer fra Microsoft. Azure Active Directory kan sees på som siste versjon av AD, denne er kun tilgjengelig i Azureskyen til Microsoft, altså kun over internett. Les mer om Azure Active Directory i delkapittel \ref{sec:teoridel_azureAd}.
+
+\section{SAML}
+\label{sec:teoridel_SAML}
+SAML står for Security Assertion Markup Language og er et XML-basert\footnote{Exstensible Markup Language, et universelt og utvidbart markeringsspråk. Brukes for deling av data mellom systemer, spesielt over internett og for koding av dokumenter.}  åpen autentiserings protokoll. Det viktigste SAML adresserer er nettleser single sign-on (SSO). SAML fungerer ved at den definerer tre roller: 
+\begin{itemize}
+\item Bruker
+\item Identitetstilbyder 
+\item Tjenestetilbyder (applikasjon)
+\end{itemize}
+Se kapittel \ref{subsec:konfigurasjon_innloggingsmekanismer_hvaSkerVedInnlogging} for en beskrivelse av autentiseringsflyten i for SAML protokollen. Kommunikasjonmetoden som SAML bruker er XML kombinert med ulike kommunikasjons protokoller\cite{SAMLProtokoller} som HTTP og SOAP\footnote{Er en protokoll for utveksling av XML-baserte meldinger}. SAML ble definert av OASIS SSTC (Security Services Technical Committee) i Januar 2001\cite{SAMLHist}. Protokollen er revidert flere ganger og har endt opp i versjonen, SAML 2.0, som ble en standard i 2005. \\
+\\
+SAML er enda aktuell autentiseringprotokoll for en rekke tjenester. Det er identitetstilbydere som kun tilbyr SAML som ønsker å knyttes til nye applikasjoner, og nye applikasjoner som ønsker å gi mulighet for å knyttes til vi SAML. Våren 2015 ble det lagt inn støtte for SAML i nye Office 365 fra Microsoft\cite{SAMLOffice}. 
+\section{WS-Federation}
+\label{sec:teoridel_WSFederation}
+Dette er en protokoll for kommunikasjon mellom Identity Providers\footnote{Tilbyder av identitet for brukere som ønsker å interaktere med et system.} og Relying Parties\footnote{Databegrep for å snakke om en server som gir tilgang til en sikret software applikasjon.}. Den definerer et rammeverk for spørringer relatert med forespørseler om tilgang til en beskyttet ressurs. Målet med WS-Federation er å forenkle utviklingen av fødererte tjenester igjennom intern og fjern kommunikasjon og håndtering av disse tjenester ved å bruke WS-Trust Security Token. WS-Trust er en spesifikasjon og en OASIS-standard som håndterer utlevering, fornying og validering av sikkerhets tokens. Den bruker samme innkapslingsmetode som WS-Trust nemlig RST/RSTR\footnote{RST står for Request Security Token og RSTR står for Request Security Token Response og er standard kommunikasjons meldinger som brukes av WS-Federation.}. \\
+\\
+Lansert i 2003 og revidert til versjon 1.2 i 2009. WS-federation brukes i dag i relasjon med Single Sign-On og autentiseringsløsninger.
+
+\section{OAuth 2.0 \& OAuth 1.0}
+\label{sec:teoridel_oauth}
+OAuth 2.0 er en åpen protokoll for autentisering og autorisering av beskyttet innhold. Protokollen er basert på bruk av tokens som har ulik funksjonalitet. Protokollen er bygget for å ha lav overhead i forhold til for eksempel SAML. Den er designet spesifikt til å fungere over Hypertext Transfer Protocol (HTTP). OAuth bruker "Refresh tokens", "Access tokens" og "Access code" for å oppnå at applikasjoner kan bruke identitetstilbydere for autentisering av brukere. I kapittel \ref{subsec:konfigurasjon_innloggingsmekanismer_hvaSkerVedInnlogging} beskrives autentiseringsflyten og tokenene nærmere. \\
+\\
+OAuth ble utviklet i 2006 da en utvikler jobbet med OpenID implementering mot Twitter. Dette senere resulterte i 2007 i OAuth 1.0.\cite{OAuth10Hist} Sammenlignet med OAuth 2.0 så er protokollen lettere å implementere på sin applikasjon og førte inn SSL i alle ledd av komminkasjon. I OAuth 1.0 ble alt kodet og dekodet som en rekke signaturer som førte til mye behandlingstid for alle forespørsler. Siden SSL sikrer dette uten å måtte gjøre denne jobben så er det høyere ytelse i 2.0.\cite{OAuthDifferences} OAuth 2.0 ble lansert i 2012.  \\
+\\
+Protokollen er bassert på REST\footnote{REST står for Representational State Transfer og er en software arkitekts stil som følger retningslinjer og best practice for å lage skalerbare web tjenester.} og JSON\footnote{JSON står for JavaScript Object Notation og er en enkel tekstbasert standard for datautveksling.} noe som åpner for enkel bruk av protokollen fra både datamaskiner, mobile enheter, smartklokker og annet utstyr med støtte for disse protokollene.
+
+\section{Azure AD Graph}
+\label{sec:teoridel_azureAd_graph}
+Azure AD Graph er en API protokoll som lar autoriserte brukere gjøre operasjoner på objekter i Azure AD. Datastrukturen i Azure AD er bygd opp som en graf. AAD Graph tillater autoriserte brukere å gjøre spørringer mot AAD for å oppdatere eller navigere igjennom objektene i AAD. Objektene i ADD, altså brukere, grupper og applikasjoner kan sees på som objekter som er knyttet til hverandre med koblinger. Objektene kan også kalles noder.  Protokollen er kommuniserer ved bruk av REST og JSON meldinger. \\
+\\
+Protokollen sammenlignes med Facebook Graph API. Facebook har mer funksjonalitet og muligheter bygget inn i sin Graph, men prinsippene er det samme. Man kan hente ut, legge til, oppdatere eller slette informasjon som ligger i noder i datastrukturen i brukerdatabasen. Denne funksjonaliteten bidrar til å skape et stort skille mellom hva en tradisjonell AD kan gjøre og hva AAD kan gjøre for både administratorer, sluttbrukere og utviklere. Graph API gjør det mulig å lage webapplikasjoner som kan jobbe rett på objektene i AAD uten å trenge noen form for ekstra mellomvare annet enn det som allerede er bygget inn i Azure AD.
+
+\subsection*{Tilganger}
+For og hindre at alle brukere kan gjøre alle operasjoner er det tilgangsstyring på hva brukere kan gjøre med AAD igjennom graph. Dette gir i prinsippet mulighet til å delegere tilganger og lage tilgangsgrupper som har lov til å endre og gjøre ulike ting igjennom graph API. Dette er funksjonalitet som man ikke enda kan gjøre igjennom eksisterende portaler tilknyttet AAD. Microsoft har varslet at slik funksjonalitet vil komme \cite{NasosAzureADExplained}, men sier ingenting om når og hvordan. 
+
+
+\section{OpenID Connect}
+\label{sec:teoridel_openIdConnect}
+OpenID Connect (OIDC) er en åpen identitets protokoll som ligger på toppen av OAuth 2.0. Den muliggjør for klienter å kunne verifisere identiteten til en sluttbruker ved hjelp av en id token. OpenID Connect bekrefter identitenen på brukeren som er autentisert med svært lav overhead i forhold til andre autentiseringssystemer\cite{OIDCFunksjonalitet}. OIDC er utviklet med mål om å “making simple things simple and complicated things possible”\cite{OIDCHjemmeside}. Det muliggjør for utviklere å autentisere sine brukere på tvers av nettsider og applikasjoner uten å måtte eie og håndtere passord eller autentiseringsmekanismer selv på en enda enklere måte enn bare ved bruk av OAuth. Ettersom protokollen er satt sammen av blant annet flere elementer har man også fordelene og egenskapene ved bruk av OAuth også, dette betyr blant annet kommunikasjon ved bruk av REST og JSON meldinger. 
+
+\section{Azure}
+\label{sec:teoridel_azure}
+Microsoft Azure er sky plattformen til Microsoft. Azure er hovedsakelig en skytjeneste men deler av funksjonaliteten kan også bygges på private servere. Plattformen er bygd for å levere Infrastructure-as-a-Service (IaaS) og platform-as-a-service(PaaS). Dette muliggjør at du kan ha både managed og unmanaged tjenester. Managed menes at du kan ta å sette opp en tjeneste fra bunnen av og du har kontroll og oversikt i alle ledd av en tjeneste, dette betyr konfigurasjon av operativsystem, programvare og annet. Unmanaged betyr at du henter ut en service direkte i Azure og bruker tjenesten direkte som en abstrakt entitet, du oppretter tjenesten ved noen få tastetrykk og kan ta ibruk tjenesten med en gang. Azure kan sees på et samlepunkt for alle server-tjenester Microsoft har tilgjengelig med en oversiktlig “webdrakt” utenpå. Ved å bruk en slik løsning har du tilgang til alle aspekter man har ved viritualisering men man kan også ta i bruke tjenester direkte uten å måtte sette dem opp selv på en virtuell maskin. Med Azure kan du bygge infrastruktur, utvikle moderne applikasjoner, få innsikt i samt behandle data og håndtere identitet og tilganger. 
+\\
+\\
+Tjenesten ble lansert i 2010 og hatt stødig vekst siden\cite{AzureLansert}. Azure blir idag brukt til å løse infrastruktur utfordringer og muliggjør for mindre bedrifter å kunne tilby tjenester på en dynamisk skalerbar måte, uten å trenge å drifte, oppdatere eller vedlikeholde operativsystemene og programvaren selv. 
+\\
+\\
+Utfordringer rundt Azure er det lovmessige aspektet som bedrifter generelt står ovenfor når de skal ta i bruk skyløsning. Når data er lagret i skyen vil det tidvis være uklart hvilke regler som gjelder for ulike typer håndtering av data. Om selskapet er registrert i Norge, Azure serverene som brukes står i Irland men Microsoft er registert som et Amerikansk selskap så må man forholde seg til lovverk fra alle tre landene. Microsoft etterstreber å møte nasjonale og internasjonal standarder slik at sikkerhetsnivået, regler og rutiner overholdes på en god måte\cite{AzurePrivacy}. På tross av dette er lovverk rundt personopplysninger i Norge fortsatt så streng at det er en utfordring og benytte seg av utenlandske selskaper for lagring av den sensitive informasjonen. Det er ulike måter å løse denne problemstillingen på, men prosjektgruppen har valgt å ikke gå dypere inn i dette i enne oppgaven.
+
+\section{Azure AD}
+\label{sec:teoridel_azureAd}
+Azure Active Directory (Azure AD eller AAD) den nye skyversjonen av Microsoft Active Directory. Azure AD er designet for å dekke identitet- og tilganghåndtering for en bedrift både for intranett og i skyen. Den lar deg lage en egen privat katalogtjeneste for håndtering av eksterne og lokale ressurser og tilganger. ADD er kun tilgjengelig i skyen, og er ikke bare en katalogtjeneste slik som Active Directory. Av ny funksjonalitet er integrerte påloggingsprotokoller for SSO av applikasjoner knyttet til Azure. Disse applikasjonene kan være utviklet selv, eller tilknyttet AAD fra før. Microsoft jobber hele tiden med å legge til nye applikasjoner for SSO i sin tjeneste, og har som mål at alle store nettapplikasjoner skal være tilgjengelige for deres brukere igjennom AAD. For bedrifter som allerede benytter Microsfot Office 365 er tjenesten inkludert i lisensen. Azure AD lisensieres på ulike måter, les mer om dette i kapittel \ref{subsec:konfigurasjon_genrellHaandteringAvAad_lisensmodell}.
+\\
+\\
+Azure AD kobles opp mot et sett av ulike tjenester med ferdig konfigurert “endpoints” eller api’er for tilkobling av ulike tjenester. Dette gjelder blant annet OAuth 2.0, OpenID Connect, SAML, AD Sync med flere. Azure AD kan fungere som en mer tradisjonell Active Directory eller den kan brukes mer rettet mot web applikasjoner eller native applikasjoner. 
+\\
+\\
+AAD har vært tilgjengelig like lenge som Azure. Microsoft mener framtiden er i skyen og Azure AD er deres svar på identitetshåndtering. Ved å bruke Azure AD har man tilgang til sikkerhet og beskyttelsesmekanismer Microsoft har jobbet lenge med å implementere og bygge opp på en god måte, dette er ingen hvilepute, men hjelper når bedrifter skal tenke sikkerhet for datasystemene sine.
+
+\section{IdentityServer3}
+\label{sec:teoridel_identityServer3}
+Identityserver3 er et OpenSource .NET/Katana basert rammeverk for implementering av OpenID Connect. Rammeverket er bygget så man må bygge knytningen til brukerdatabasen og deler av gui'en selv. Men rammeverket muliggjør implementering av Single Sign-On og tilgangkontroll for moderne web applikasjoner og API's ved bruk av protokollene OpenID Connect og OAuth2. Ved bruk av OpenID Connect gir dette mulighet for at rammeverket kan brukes på ulike klienter deriblant mobil, web, SPA\footnote{Single-Page Application (SPA), er en web applikasjon eller web side som passer på en enkel web page med mål om å gi bruker en flytenede bruker opplevelse på lik linje som en skrivebordsapplikasjon. I en SPA blir all kode, HTML, Javascript og CSS hentet ned i nedlastningsøyeblikket eller blir hentet dynamisk og lagt til i siden ved behov.} og skrivebordsapplikasjoner. 
+\\
+\\
+IdentityServer3 er det tredje OpenSource prosjektet bygget av flere av de samme menneskene. Tidligere versjoner av IdentityServer har implementert eldre protokoller. Navnet IdentityServer3 kommer av at det er det tredje prosjektet og ikke 3. versjon av programvaren, IdentityServer3 1.0 har vært tilgjengelig siden Februar 2015, mens IdentityServer 2.0 Beta har vært i betatest siden April 2015. Det er nå det tyske selskapet tyske selskapet Thinktecture med Dominick Baier i spissen som driver prosjektet og jobber med å forbedre og videreutvikle fortløpende\cite{IDServV3Hist}. Rammeverket er gjennomtestet og utviklerne av rammeverket ser ut til å være faglig svært sterke. I motsetning til Azure AD kreves det mer kompetanse i form av kodeferdigheter og forståelse for autentiseringsmekansimer å sette opp en løsning bassert på IdentityServer3. Løsningen koster ikke noe annet en utviklingstid å ta i bruk, men ettersom dette er et OpenSource prosjekt er framtiden for prosjektet noe usikker. Man kan aldri helt være sikker på om det vil fortsette å bli vedlikeholt, selv om det er en trygghet i at det er et selskap med tung it kompetanse som er tett knyttet til prosjektet.   
+
+\section{OWIN og Katana}
+\label{sec:teoridel_owinOgKatana}
+{\color{blue}Er dette skrevet av fra et sted?}\\
+{\color{red}Så OWIN er en opensource comunity drevet standard som gjør det mulig å implementere .NET applikasjoner på hvilken som helst webserver? Katana er en openspource implementasjon av standarden hvor utviklingene er dervet av Microsoft?}
+\\
+\\
+OWIN er spesifikasjoner for å separere kommunikasjonen mellom .NET web applikasjoner og servere opp i moduler. OWIN regnes som en standard og er opensource og "comunity drevet". Hensikten med OWIN prosjektet var å skille ut komponenter Microsoft tidligere hadde bygget inn i .NET kjernen, så de ble tilgjengelige for alle webservere å håndtere. 
+
+kun er spesifikasjoner brukes Katana for å implementere disse spesifikasjonene. Katana er et fleksibelt sett av komponenter for bygging og drifting av OWIN-baserte web applikasjoner. Komponentene er opensource OWIN komponenter som er bygget og sluppet av Microsoft. Disse komponentene inkluderer både infrastruktur biter som hosts og serveres, og i tillegg funksjonskomponenter, som autentiserings og tilknytningsmuligheter til andre rammeverk som er i ASP.NET Web. Poenget med Katana er at det skal være portabelt, modulært og skalerbart samt lettkjørt. Målet med dette prosjektet er at det skal være et abstraksjonlag mellom .NET web servere og web applikasjoner for å gi utvilkere flere valgmuligheter enn det som har vært tidligere. Prosjektet muliggjør utviklere om å bestemme hvor lettkjørt eller hvor funksjonsrikt Web løsningen skal være. Katana er en implementering av OWIN spesifikasjonene, gjennomført av Microsoft. \\
+
+Katana 
+
+\section{Azure AD Application Proxy}
+\label{sec:teoridel_azure_ad_application_proxy}
+Azure AD Application Proxy er en tjeneste i Azure AD som eksponere web applikasjoner, eksempelvis Outlook Web Access og IIS-baserte applikasjoner, i et privat nettverk til eksterne brukere. Dette fører til at brukere kan sikkert aksessere applikasjoner autentisert fra hjemmet og på sine egne enheter. Dette fører til at brukerne kan autentisere igjennom en skybasert proxy som blir driftet i Azure og få tilgang. Eksterne maskiner kan utføre sikker tilkobling til organisasjonen sine nett-tjenester uten bruk av VPN og uten åpne for sikkerhetsproblematikk. \\
+\\
+Denne tjenesten ble sluppet tidlig desember 2014 og har vært tilgjengelig siden. For å kunne bruke Application Proxy må man ha Azure AD Premium.\\
+\\
+Oppsette på dette vil være at man har en server med en singel applikasjon kjørende. Denne blir sett på som en connector og den lager en outbound tilkobling til Azure løsningen man har og avventer videre instrukser. I Azure wil dette dukke opp som en Proxy Applicatoin med både ekstern og intern URL konfigurert og med autentiseringsalternativer. Når en bruker åpner den eksterne URL'en vil denne spørringe blir videresendt til connector serveren som håndterer endelig trafikk mot web serveren. Proxy connectoren lager kun en outbound tilkobling og det er derfor ikke behov for å vise webserveren direkte ved brannmuren.
+
+\section*{Single tenant applikasjon}
+\label{sec:singleTenantApplikasjon}
+Single tenant betyr at en applikasjon kun kan brukes av en bedrift. For å tilby applikasjonen til flere bedrifter må det lages en ny versjon av applikasjon, database og eventuell lagring for hver enkelte bedrift man selger applikasjonen til. Fordeler gir tilbyder av programvaren enklere mulighet til å tilpasses hver enkelt leveranse av applikasjonen. Man sikrer ytterligere selve adskillelse av data i database og lagring. Dersom en applikasjon skulle feile under en oppdatering eller ved vedlikehold, påvirker ikke dette noen andre bedrifter enn kun de som er knyttet til denne. Ulike ulemper vil være at det vil ta tid å holde koden for mange like applikasjoner vedlike dersom det er gjort store tilpasninger på hver og en. I tillegg til dette gir det deg flere databaser, flere applikasjoner og potensielt flere servere å vedlikeholde.
+
+\section*{Multi tenant applikasjon}
+\label{sec:multiTenantApplikajson}
+Multi tenant betyr at applikasjonen kun ligger et sted, men er satt opp for å fungere mot ulike bedrifter. Alle bedriftene og brukerne deler applikasjon, lagring og database. Applikasjonen oppleves som adskilt fra hverandre ved at data blir merket tilhørende ulike brukere eller bedrifter. Applikasjonen skiller mellom hvilken data som tilhører hvilken bedrift. Fordelen ettersom det kun er en instans av applikasjon og applikasjondatabasen vil være at du kun trenger å gjøre en oppdatering på en tjeneste. Dette vil deretter slå ut på samtlige brukere umiddelbart. Vedlikehold vil også bli enklere da du må forholde deg til færre servere og tjenester. Ulemper tidligere så man på multi-tenant løsninger som kompliserte å ta backup av. Dette vil ikke påvirke oppdragsgiver ettersom de betaler Microsoft for hosting og drift og backup, ytterligere backup de gjør selv vil kun være en ekstra sikkerhet. Single point of failure om det skulle være noe som feiler på applikasjonen så har det utslag på alle brukere av gitt applikasjon.
+
+\section{Windows PowerShell}
+\label{sec:teoridel_windows_powershell}
+Skal vi ha med om dette? Powershell er praktisk i mange sammenhenger for Norkart og ser ut til å være mye brukt i Azure og Windows sammenheng.

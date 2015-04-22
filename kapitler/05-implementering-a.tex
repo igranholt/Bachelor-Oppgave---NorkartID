@@ -1,0 +1,101 @@
+\chapter{Konfigurasjon}
+\label{chap:konfigurasjon}
+
+\section{Registrering av brukere}
+\label{sec:konfigurasjon_registreringAvBrukere}
+{\color{red}TODO} \\
+Koblinger mulig mot lokale databaser \\
+Bruke Azure som en backup?\\
+Organizational og Microsoft accounts
+
+\subsection{Import av brukere}
+\label{subsec:ikonfigurasjon_registreringAvBrukere_importAvBrukere}
+{\color{red}TODO} \\
+Import fra andre databaser \\
+Etterimport av nye brukere fra lokal database \\
+ 
+\subsection{Masse-registrering av brukere}
+\label{subsec:konfigurasjon_registreringAvBrukere_masseRegistrering}
+{\color{red}TODO} \\
+Mulig å selvhåndtere igjennom epost?  \\
+Sjekke hva rutiner og måter som dette anbefales å gjøre på \\
+
+\subsection{Enkelt-registrering av brukere}
+\label{subsec:konfigurasjon_registreringAvBrukere_enkeltRegistrering}
+{\color{red}TODO} \\
+Etter registrering og synkronisering relart med dette. \\
+
+\section{Brukeradministrasjon}
+\label{sec:konfigurasjon_grupperOgRoller}
+
+\subsection{Single tenant work-around}
+\label{subsec:konfigurasjon_grupperOgRoller_singleTenantWorkAround}
+Om vår oppdragsgiver ønsker å ha alle sine brukere i en AD, men likevel ønsker at brukerene skal få kunne koble til med sine egne mailadresser, vil dette trolig være mulig i B2B og B2C løsningen som kommer.
+
+\subsection{Grupper}
+\label{subsec:konfigurasjon_grupperOgRoller_grupper}
+
+\subsection{Roller}
+\label{subsec:konfigurasjon_grupperOgRoller_roller}
+
+\section{Egenadministrasjon}
+\label{sec:konfigurasjon_endringAvBrukerprofil}
+{\color{red}TODO} \\
+Sjekke muligheter for selvadministrering av brukerprofil\\
+Graph api vs myapps
+
+\subsection{Endre passord}
+\label{subsec:konfigurasjon_endringAvBrukerprofil_endrePassord}
+
+\subsection*{Konfigurasjon i Azure}
+
+
+\subsection*{Regsitrering av autentiseringsdata}
+
+
+\section{Glemt passord}
+\label{sec:konfigurasjon_glemtPassord}
+
+\section{Legg til applikasjon i Azure AD}
+\label{sec:konfigurasjon_leggTilApplikasjonIAzureAD}
+{\color{red}TODO} \\
+
+\section{Oppdatere applikasjoner i Azure AD}
+\label{sec:konfigurasjon_leggTilApplikasjonIAzureAD_oppdatereApplikasjonIAzureAD}
+{\color{red}TODO} \\
+
+Etter applikasjonen er registrert i Azure AD er det mulig å oppdatere og legge til ekstra funksjonalitet knyttet til applikasjonen. Dette gjøres I Azure portalen. Det er mulig å oppdatere brukertilgang og adgang til andre applikasjoner. Det er også mulig å gjøre applikasjonen til en multi-tenant applikasjon, se seksjon \ref{subsec:konfigurasjon_grupperOgRoller_multiTenant}
+
+\section{Autentiserings scenarier for AAD}
+\label{sec:konfigurasjon_autentiseringsScenarierForAAD}
+{\color{red}TODO, } \\
+Hva skjer i bakgrunnen når AAD brukes for autentisering? 
+
+\subsection{Webapplikasjon med OIDC}
+\label{subsec:konfigurasjon_autentiseringsScenarierForAAD_webapplikasjonMedOIDC}
+{\color{red}TODO, } \\
+KJøre Fiddler tester og ha sekvensdiagram \\
+
+\subsection{Mobilapplikasjon}
+\label{subsec:konfigurasjon_autentiseringsScenarierForAAD_mobilApplikasjon}
+{\color{red}TODO, } \\
+
+\subsection{Desktop applikasjon}
+\label{subsec:konfigurasjon_autentiseringsScenarierForAAD_desktopApplikasjon}
+{\color{red}TODO, } \\
+
+\section{Implementering mot de ulike platformene}
+\label{sec:konfigurasjon_implementeringnMotDeUlikePlatformene}
+Applikasjoner som skal bruke AAD som autentiseringsverktøy må implementere en del elementer. Denne seksjonen har til hensikt å forklare hvordan AAD kan implementeres i web- og nativeapplikasjoner  og er i hovedsak ment for utviklere i Norkart. I tillegg til disse forklaringene her er det laget veiledninger som viser hvordan dette kan gjøres steg for steg. Se vedlegg {\color{red}TODO} \\ 
+
+\subsection{Webapplikasjon - ASP.NET MVC}
+\label{subsec:konfigurasjon_implementeringMotDeUlikePlatformene_Webapplikasjon}
+
+\subsection{Android-applikasjon}
+\label{subsec:konfigurasjon_implementeringMotDeUlikePlatformene_leggetilNyApplikasjon_androidApplikasjon}
+{\color{red}TODO} \\
+Hvordan legge inn i Azure med tanke på autorisering og autentisering
+
+\section{Lisensmodell}
+\label{sec:konfigurasjon_lisensmodell}
+{\color{red}TODO} \\

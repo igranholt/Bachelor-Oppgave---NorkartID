@@ -1,0 +1,64 @@
+\chapter{Problemstilling}
+\label{chap:problemstilling}
+Design, spesifiser rammene for en ny autentiseringsløsning
+for Norkart. Utvikle komponenter ved behov. Den ferdige løsningen skal ta utgangspunkt i eksisterende løsninger og biblioteker. Løsningen skal på sikt bli til NorkartID og skal være et SingleSignOn (SSO) brukerhåndteringssystem for applikasjoner Norkart tilbyr sine kunder. Systemet skal kunne brukes uavhengig av plattform, skjermstørrelse og programvare.
+
+\section{Oppdragsgiver, før prosjektet}
+\label{sec:problemstilling_oppdragsgiverFørProsjektet}
+Oppdragsgiver, Norkart leverer flere applikasjoner til bedriftsmarkedet, nesten alle applikasjonene har ulike autentiseringsløsninger. Noen av disse autentiseringsløsningene blir av ansatte i Norkart omtalt som lite sikkre. Blant annet har minst en løsning lagring av passord i klartekst. 
+
+\section{Ønske fra oppdragsgiver}
+\label{sec:problemstiling_ønskeFraOppdragsgiver}
+Oppdragsgiver ønsket en løsning som skulle fungere som en SSO løsning for kunder av Norkart. Norkart skal kunne knytte til det de ønsker av applikasjoner mot systemet. Det er ønsket at brukere selv skal kunne administrere egne brukerprofildata. I tillegg ønskes "lokale administratorroller" for bedrifter med flere brukere, slik at bedriftene selv kan administrere egne ansatte. 
+\bigskip
+Oppdragsgiver ønsket at vi skulle se nærmere på Azure AD som Active Directory teknologi og OpenID Connect som autentiserings teknologi, men ønsket initielt ikke å binde oss til spesifikke teknologier initielt.
+
+\section{Krav til oppgaven}
+\label{sec:problemstilling_kravTilOppgaven}
+Oppdragsgiver ba prosjektgruppen legge fram et forslag til kravspesifikasjon som senere skulle evalueres og gjennomgås for godkjenning. Kravspesifikasjonen er lagt ved i kapittel \ref{chap:kravspesifikasjon} - \nameref{chap:kravspesifikasjon}. Initielle krav til oppgaven som ble gitt før utarbeidelse av kravspesifikasjon er presisert i seksjon \ref{subsec:problemstilling_kravTilOppgaven_Oppdragsgiver} og \ref{subsec:problemstilling_kravTilOppgaven_Oppdragsgiver}.
+
+\subsection{Krav fra oppdragsgiver}
+\label{subsec:problemstilling_kravTilOppgaven_Oppdragsgiver}
+Må fungere mot de applikasjonene Norkart ønsker å levere igjennom tjenesten. 
+\\
+Løsningen må tilfredstille kravene gitt i norsk lov med tanke på håndtering av brukerdata. 
+\\
+Oppdragsgiver ønsket at vi skulle fokusere på skalerbarhet, stabilitet og sikkerhet under utarbeidelse av kravspesifikasjon, men ga ikke prosjektgruppen konkrete eksempler eller tall og jobbe med underveis i prosjektet. 
+\\
+Underveis i prosjektet ble det bestemt av product owner at Azure AD skulle velges som totalløsning ( se referat fra møte i vedlegg {\color{red}TODO} ) prosjektgruppen måtte da redefinere store deler av oppgaven på nytt for og få oppgaven til å passe inn i et bachelor format.
+
+\subsection{Krav fra høyskolen}
+\label{subsec:problemstilling_kravTilOppgaven_Hoyskolen}
+Rapporten må tilfredstille kravene for bacheloroppgave ved Høyskolen i Gjøvik. 
+
+\section{Målgruppe for rapporten}
+\label{sec:problemstilling_målgruppeForRapporten}
+Rapporten skrives som en bacheloroppgaver for og tilfredstille kravene fra sensor og høyskolen i gjøvik. Ettersom bachelorgruppen ikke leverer et enkelt produkt ved endt bachelorprosjekt men heller flere små "proof of concepts" på hvordan den ferdige løsningen skal virke og er anbefalt implementert, vil selve oppgaven være hovedproduktet vi leverer til oppdragsgiver. Oppgaven har derfor en vinkling mot å innformere ledelsen og utviklere hos Norkart om teknologi, drøfting av teknologivalg og mulige implementasjoner. Målgruppen for rapporten kan derfor sies å være både ledelsen i Norkart og utviklere i Norkart. 
+
+\section{Studentenes faglige bakgrunn}
+\label{sec:problemstilling_studentenesFagligeBakgrunn}
+Prosjektgruppen består av tre studenter med svært ulik faglig bakgrunn. 
+
+\subsection{Alf Hammerseth}
+Har gått fagskoen i innlandet. 
+Går data ingeniør linjen ved Høyskolen i Gjøvik når denne oppgaven skrives. Har fordypet seg i programmering i valgfagene.
+
+\subsection{Ida Granholdt}
+Har en baceholor i grafisk design.
+Går webutvikling linjen ved Høyskolen i Gjøvik når denne oppgaven skrives. Har fordypet seg i blant annet programmering i valgfagene. 
+
+\subsection{Per Christian Kofstad}
+Har gått befalskolen, halve krigsskolen, jobbet tilsammen 6 år i forsvaret, hovedsakelig som sambandsspesialist med vekt på sikkerhet, strategisk og taktisk planlegging av samband, sikkerhet og datasystemer. 
+Har jobbet som Sambandsansvarlig i en Innsatsstyrke i Heimevernet på deltid under studietiden.
+Går informasjonssikkerhet ved høyskolen i Gjøvik når denne oppgaven skrives. Har fordypet seg i programmering i valgfagene under studiet. 
+
+\section{Valgt arbeidsform}
+\label{sec:problemstilling_valgtArbeidsform}
+Vi har valgt å jobbe etter en smidig utviklingsmodell. Les mer om dette i kapittel \ref{sec:teoridel_arbeidsmetodikk} \nameref{sec:teoridel_arbeidsmetodikk}.
+
+\section{Termonologibruk}
+\label{sec:problemstilling_termonoligbruk}
+\begin{itemize}
+
+\end{itemize}
+

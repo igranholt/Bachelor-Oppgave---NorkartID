@@ -1,0 +1,117 @@
+\chapter{Testing}
+\label{chap:testing}
+I dette delkapitlet kommer vi til å gjennomføre en del tester for å se om Azure tilfredsstiller de operasjonelle kravene definert i denne oppgaven. Det vil kjøres tester mot de høynivå use casene som er definert i kapittel \ref{subsec:kravspesifikasjon_funksjonelleKrav_hoyNivaa} \nameref{subsec:kravspesifikasjon_funksjonelleKrav_hoyNivaa} og det vil gjennomføres en brukeranalyse hvor vi tar for oss Azure som verktøy for Norkart. Avslutningen av dette kapitlet inneholder drøfting av resultater fra den gjennomførte testingen.
+
+\subsection{Implementasjontesting}
+\label{sec:testing_implementasjontesting}
+Tester her funksjonelle krav \\
+Testing av løsning \\
+
+Intro\\
+For å teste at de funksjonelle kravene til løsningen blir overholdt er det gjennomført funksjonstesting av AAD i Azure portalen og på demo applikasjonene gruppen har utviklet, altså web applikasjoner og en native applikasjon. Prosjektgruppen har utviklet testscenarier som kan gjennomføres uten å ha innsyn i koden, altså black box tester. Disse har til hensikt å teste at funksjonaliteten oppfyller kravene. Testene er utviklet på bakgrunn av høynivå use case beskrivelsene i kravspesifikasjonen, se \ref{subsec:kravspesifikasjon_funksjonelleKrav_hoyNivaa}.
+
+\subsection{Innloggingsmekanismer}
+\label{sec:testing_innloggingsmekanismer}
+Testing \\
+Hentet fra kravspek:
+Aktør skal kunne logge seg inn og få sikker tilgang til ønsket applikasjon. Dette skal være SSO slik at aktør i tillegg blir autentisert for andre applikasjoner aktør har tilgang til. Aktør skal i tillegg kunne logge seg ut av en applikasjon. Det skal også være mulig for aktør å gjenopprette sitt eget passord dersom dette er glemt.
+
+
+Resultater av testing \\
+
+\subsection{Egenadministrasjon}
+\label{sec:testing_egenadministrasjon}
+Testing \\
+
+Hentet fra kravspek:
+Aktør skal selv kunne endre og registrere? på egne regist- rerte opplysninger på sin brukerprofil.
+
+Resultater av testing \\
+
+\subsection{Brukeradministrasjon}
+\label{sec:testing_brukeradministrasjon}
+Testing \\
+
+Hentet fra kravspek:
+Håndtere brukere innenfor en gitt gruppe.
+
+Resultater av testing \\
+
+\subsection{Håndtering av brukere, grupper og roller}
+\label{sec:testing_haandteringAvBrukereGrupperOgRoller}
+Testing \\
+
+Hentet fra kravspek:
+Aktør skal kunne registrere og håndtere brukere, grupper og roller.
+
+Resultater av testing\\
+
+\subsection{Håndtering av applikasjoner}
+\label{sec:testing_handteringAvApplikasjoner}
+Testing \\
+
+Hentet fra kravspek:
+Aktør skal kunne registrere og administrere applikasjoner i en AAD. I tillegg skal aktør kunne klargjøre applikasjoner for bruk av løsningen.
+
+Resultater av testing \\
+
+\subsection{Drøfting av resultat opp mot krasvpek}
+\label{sec:testing_droftingAvResultatOppMotKrasvpek}
+Drøfting av resultat opp mot kravspek
+
+\section{Målbare tester mot kravspesifikasjon}
+\label{sec:testing_malbareTesterMotKravspesifikasjon}
+{\color{red}TODO}
+Tester her operasjonelle krav \\
+Da tenkte jeg at vi referer til Microsoft dokumentasjon.\\
+\\
+Intro \\
+
+\subsection{Ytelse}
+\label{sec:testing_malbareTesterMotKravspesifikasjon_ytelse}
+Testing \\
+
+Hentet fra kravspek:
+• Løsningen skal som minimum takle 10 000 brukere innlogget samtidig.
+• Løsningen skal håndtere pålogging av 100 brukere i minuttet.
+• Løsningen skal bygges for å være skalerbar.
+
+Resultater av testing \\
+
+\subsection{Sikkerhet og Autentisering}
+\label{sec:testing_malbareTesterMotKravspesifikasjon_sikkerhetOgAutentisering}
+Testing \\
+Resultater av testing \\
+
+\subsection{Universell Utforming}
+\label{sec:testing_malbareTesterMotKravspesifikasjon_universellUtforming}
+Testing \\
+Resultater av testing \\
+\\
+
+\subsection{Drøfting av resultat mot kravspek}
+\label{sec:testing_droftingAvResultatMotKravspek}
+Drøfting av resultat opp mot kravspek \\
+
+\section{Brukervennelighetsanalyse}
+\label{sec:testing_brukervennelighetsanalyse}
+{\color{red}TODO}
+Analyse av sluttbrukere \\
+Analyse av kundeservice og administrator \\
+Test av alle roller \\
+Test logg inn, logg ut, resett passord og brukeradmin? \\
+Hvilke krav skal disse basreres på? \\
+Universell utforming/operasjonelle krav om brukervennlighet? \\
+
+Intro\\
+Det er viktig for oppdragsgiver at løsningen er brukervennlig for alle rollene som skal bruke den. "En brukervennlig løsning skal føre brukeren til målet på en effektiv og forståelig måte." \cite{Brukervennlighet} Analyse av brukervennlighet vil her baseres på at kravene til brukervennlighet i kravspesifikasjonen \ref{subsec:kravspesifikasjon_operasjonelleKrav_brukervennlighet} opprettholdes og at rollene får utført hovedfunksjonene beskrevet i høynivå use case beskrivelser \ref{subsec:kravspesifikasjon_funksjonelleKrav_hoyNivaa}.  
+\\
+For å analysere brukervennligheten er det først utført brukertester på systemet. Brukertester vil si å la brukere av løsningen få oppgaver som skal utføres samtidig som de blir observert. Resultatet av brukertestene kan så brukes til å evaluere løsningens brukervennlighet. \cite{PraktiskBrukertesting}
+
+
+Testing \\
+Analyse \\
+Analyse / Drøfting av resultat opp mot kravspek \\
+
+\section{Drøfting av testresultat for hele løsningen}
+\label{sec:testing_drøftingAvResultat}

@@ -1,0 +1,78 @@
+%% This document gives an example on how to use the %gucmasterthesis
+%% LaTeX document class.
+%% Use oneside for PDF delivery and twoside for printing in a %book style
+%% use language english or norsk and one of the following shortenings
+%%  ``BSP'' Bachelor i Spillprogrammering,\\
+%%  ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
+%%  ``BIS'' Bachelor i Informasjonssikkerhet,\\
+%%  ``BPU'' Bachelor i Programvareutvikling, \\
+%%  ``BIND'' Bachelor i Ingeniørfad - data. 
+\documentclass[BIND, norsk, oneside]{gucthesis}
+
+\usepackage[utf8]{inputenc}     % For utf8 encoded .tex files
+\usepackage{graphicx}           % For inclusion of graphics
+\usepackage{hyperref}           % For cross references in pdf
+\usepackage{cite}               % For å kunne sitere
+\usepackage{enumitem}           % For å kunne indente lister
+\usepackage{color}              % For farger
+\usepackage{float}              % For plasseringer
+\usepackage{framed}             % For rammer
+\usepackage{listings}           % For kildekode
+\usepackage{subcaption}         % For to figurer ved siden av hverandre
+\usepackage[justification=centering]{caption}                           % For centering all captions
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{light-gray}{gray}{0.95}
+
+
+
+\lstset{
+    backgroundcolor=\color{light-gray},
+    basicstyle=\footnotesize,
+    escapeinside={(*@}{@*)},
+    numbers=left,
+    numberstyle=\tiny\color{mygray},
+    keywordstyle==\color{blue},
+    language=C,
+     breaklines=true,
+}
+\begin{document}
+\thesistitle{Norkart ID}
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+
+\setlist{nosep}
+\input{001-forside}
+
+\makefrontpages % make the frontpages
+
+\input{002-forord}
+
+\tableofcontents
+
+
+\input{kapitler/01-problemstilling}
+\input{kapitler/02-kravspesifikasjon}
+\input{kapitler/03-teoridel}
+\input{kapitler/04-valgAvLosning}
+\input{kapitler/05-implementering}
+\input{kapitler/06-testing}
+\input{kapitler/08-veiledninger}
+\input{kapitler/12-kravspesifikasjon-gammel}
+\input{kapitler/13-designAvIdentityServer3-gammel}
+\input{kapitler/09-konklusjon}
+
+
+\input{101-underskrifter}
+
+\bibliographystyle{gucthesis}
+\bibliography{references}
+
+\appendix
+\input{vedlegg/termonologi}
+\input{vedlegg/arbeidsmetodikk}
+\input{vedlegg/motereferat-sprint1}
+\input{vedlegg/motereferat-sprint2}
+
+
+\end{document}

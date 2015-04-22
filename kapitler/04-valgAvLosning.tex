@@ -1,0 +1,153 @@
+\chapter{Valg av løsning}
+\label{chap:valgAvLosning}
+Dette kapittelet beskriver de to systemene vi så som aktuelle for å løse problemstillingen oppdragsgiver ga oss. Hensikten med kapittelet er å argumentere for valgt løsning, mens utfordringer rundt implementasjonen av valgt løsning drøftes i kapittel \ref{chap:konfigurasjon}.
+
+\section{Mulig løsninger}
+\label{sec:valgAvLosning_muligeLosninger}
+Prosjektgruppen har i samråd med Product Owner plukket ut to produkter prosjektgruppen har valgt å se nærmere på. Hensikten med dette er å kunne sette dem opp mot hverandre og ta en kunnskapsbasert beslutning om hvilken løsning prosjektgruppen skal fordype seg ytterligere i for å gi oppdragsgiver mest mulig relevant informasjon. De to løsningene som er valgt ut er Azure Active Directory (se kapittel \ref{sec:teoridel_azureAd}) og IdentityServer3 (se kapittel \ref{sec:teoridel_identityServer3}). For enkelhets skyld omtales IndentityServer3 som en ferdig løsning, selv om IndentityServer3 er et rammeverk hvor serveren må bygges og utvikles rundt.
+\\
+\\
+De neste delkapitlene skal forsøke å sette de to valgte løsningene opp mot hverandre for å finne forskjeller og likheter.
+
+\subsection{Implementasjon}
+\label{sec:valgAvLosning_muligeLosninger_implementasjon}
+I denne seksjonen vil det først drøftes litt rundt de to løsningene hver for seg, for så å trekke noe slutninger i forhold til implementasjon til slutt.
+
+\subsection*{Azure AD}
+AAD er ifølge Microsoft en ferdig løsning der brukerne skal ikke trenge å gjøre noe annet enn å legge til brukere, applikasjoner og grupper før løsningen kan tas i bruk. Prosjektgruppen har etter testing av ulike deler av løsningen konkludert med at dette er en sannhet med modifikasjoner. AAD er ganske ferdig, men komplisert å bruke riktig da det krevers kunskap om AD og AAD for å kunne sette opp dette raskt og hensiktsmessig. Det er små valg i konfigurasjonen av løsningen som får svært store konsekvenser om man ikke vet hva man driver med. 
+\\
+\\
+AAD er en unmamaged løsning som vil si at Microsoft drifter løsningen og sørger for at systemet bak løsningen fungerer som det skal. Som eier av en AAD så skal du kun konfigurere og bruke din AAD. 
+\\
+\\
+Microsoft som leverer AAD ønsker å tjene penger. Det er lagt begrensninger i AAD ved at man ikke kan legge til applikasjoner uten at de allerede er tilknyttet Azure på en eller annen måte. Selv om det kan diskuteres hvorvidt løsningen er dyr eller ikke så tar Microsoft seg litt betalt for alt. Betalingsplanene har muligheten til å skalere etter bruk, slik at man kun betaler for det man bruker. Kostnadene skalerer etter hvor mye brukerene bruker systemet, ikke etter hvor mye det koster å implementere eller kjøpe inn systemet.
+
+\subsection*{IdentityServer3}
+IdentityServer3 er et open source prosjekt som har som mål å lage et rammeverk for håndtering av OpenID Connect protokollen for ASP.NET prosjekter. Det er en liten gruppe utviklere som står bak prosjektet, og prosjektet har fått mye skryt i ulike blogger og fagmiljøer på nettet. Ettersom IdentityServer3 kun er et rammeverk vil det si at du må bygge mer rundt løsningen for å kunne bruke den med en tjeneste. Prosjektgruppen har testet enkle oppsett med denne løsningen uten å knytte den til noen database. Løsningen virker gjennomarbeidet og god. 
+\\
+\\
+Ettersom identityServer3 ikke er en ferdig løsning som kan tas ibruk med en gang, må det bygges et system rundt rammeverket. Dette må utvikles og implementeres av Norkart selv. Tilknytning, oppsett og konfigurasjon av en brukerdatabase må også gjøres under utviklingen. Utviklerne av implementasjonsløsningen står fritt til å bruke dyre kommersielle databaser og utviklingsverktøy, eller å bruke "free to use" open source løsningner. I teorien skal man kunne bygge en løsning basert på IdentityServer3 helt uten lisenser som koster oppdragsgiver annet enn utvikling og driftskostnader. IdentityServer3 er bygget etter OpenID Connect standarden og gir eier av systemet muligheter til å koble til alle typer applikasjoner så lenge applikasjonen følger OpenID Connect standarden.
+\\
+\\
+Framtiden til open source prosjekter kan være usikker da den er avhengig av at utviklere bruker fritiden sin på å feilrette, utbedre og videreutvikle prosjektene. Dette gjelder også for IdentityServer3 prosjektet. Selv om prosjektet får mye skryt på Internett betyr ikke dette at det er feilfritt, eller at det ikke trengs support på løsningen. 
+
+\subsection*{Slutninger}
+Oppdragsgiver er allerede svært tett knyttet til Microsoft. De aller fleste applikasjonene som leveres Norkart idag har tilknytning til Microsoft systemer allerede og dette vil gjelde også for framtidige løsninger. Dette gjør det rimelig å anta at en ytterligere knytning til Microsoft for å få applikasjonene til å fungere over Azure AD er realistisk å få til uten altfor kostbare grep.
+\\
+\\
+Oppdragsgiver er forberedt på å betale for en autentiseringsløsning slik de har etterspurt av prosjektgruppen. Det er en vurderingssak om man skal sette bort hele løsningen til Microsoft for å redusere implementasjonskostnader eller om man skal bruke tid og penger på å utvikle store deler av løsningen selv. 
+\\
+\\
+Support og støtte i forhold til oppsett og konfigurasjon av løsningenene er i skrivende stund varierende. Både IdentityServer3 og AAD er svært nytt da begge har begrenset oppdatert støttedokumentasjon på nett. Det er rimelig å anta at tilgangen på støttedokumentasjon vil bedre seg raskt når det blir enda flere som bruker løsningene. Ettersom Microsoft har god erfaring med å selge ut komplekse løsninger til bedrifter i stor skala er det rimelig å anta at de også vil tilby veiledning, kurs og relevant støttedokumentasjon også til AAD. Norkart er Gold Partner med Microsoft og det resulterer i et allerede tett samarbeid hvor det da vil være enkelt å få tilgang til support for AAD.
+
+\subsection{Driftsaspekter}
+\label{sec:valgAvLosning_muligeLosninger_driftsaspekter}
+I forhold til drift så skiller de to løsningene seg veldig fra hverandre. AAD driftes nesten utelukkende av Microsoft, mens IndentityServer3 er en løsning Norkart selv står ansvarlig for å bygge, vedlikeholde og drifte. Med AAD trenger man kun vedlikeholde koblingen til applikasjoner og brukeradministrasjon da dette må gjøres uansett. IdentityServer3 vil legge alt driftsansvar på Norkart.
+\\
+\\
+Ved bruk av IdentityServer3 må Norkart selv drifte både autentiseringsserveren og databasen hvor applikasjon- og brukerinformasjon lagres. Fordelen med å drifte alt selv er
+\begin{itemize}
+\item man vet hvor ting lagres til enhver tid
+\item man har mulighet til og kontrollere
+\item sikre og tilpasse løsningen slik det passer
+\end{itemize}
+Ulempen er at implementasjon av slike hjelpemidler og sikringstilltak kan ta tid. Norkart har allerede flere applikasjoner de drifter idag. Drift av IndentityServer3 vil trolig inngå som en del av de etablerte driftsrutinene Norkart allerede har etablert. 
+\\
+\\
+Det er også en tredje mulighet, bygge løsningen selv ved å bruke IndentityServer3 og å hoste løsningen i Microsoft Azure. Det blir da en managed tjeneste da Norkart må fortsatt konfigurere og drifte systemet og løsningen, men Microsoft garanterer oppetid i form av nettlinje og virtuelle maskiner i forhold til sin SLA \footnote{Service Level Agreement(SLA) er en prosess som skal sikre at kunde og leverandør har en felles forståelse for hva som skal leveres, og til hvilken kvalitet.\cite{SLA}}.
+\\
+\\
+Å sette bort drift av en autentiseringsløsning til andre innebærer å stole på selskapet som da håndterer driften og ved å benytte AAD betyr det å sette bort driften til Microsoft. På en måte slipper Norkart å tenke på driftsproblematikk i forhold til systemfeil og oppetid. På en annen side må de håndtere slike hendelser uavhengig om det er satt bort til andre eller ikke. Ved å drifte løsningen selv er de ansvarlig for oppetid og må løse hendelser helt på egen hånd.
+
+
+\subsection{Sikkerhetsaspekter}
+\label{sec:valgAvLosning_muligeLosninger_sikkerhetsaspekter}
+Felles for begge løsningene er at de gir mulighet for sikker pålogging for applikasjonsservere da de innholder Oauth 2.0. Mens Azure AD har implementert en variant av OpenID Connect standarden har IdentityServer3 forsøkt og implementere standarden 100\%. Microsoft har trolig endret litt på OpenID Connect protokollen for sin løsning for å ha mer kontroll over tilkoblingsmuligheter i Azure AD. Dette gjøre for at de skal sikre å tjene penger på løsningen sin. Både IdentityServe3 og Azure AD har en eller annen form for sesjonsoversikt over gjeldene autentiserte tokens, eller sesjoner. 
+
+\subsection*{Passordstyrke}
+Azure AD har ferdige krav til hvor sterkt passordet til en bruker skal være. Dette er ikke definert av IdentityServer3 ettersom IdentityServer3 ikke er bygget for å hjelpe til med den delen av systemet. Her må passordstyrken defineres selv. Likevel, i implementeringsforslaget som anbefales av utviklerene bak IdentityServer3, så tas det utgangspunkt i et MVC prosjekt i ASP.NET. Her har allerede Visual Studio teamet til Microsoft implementert minimums passordstyrke før man begynner utviklingen. Begge disse løsningene er godt innenfor kravet som er satt til passordstyrke i kravspesifikasjonen \ref{subsec:kravspesifikajson_operasjonelleKrav_sikkerhet} på side \pageref{subsec:kravspesifikajson_operasjonelleKrav_sikkerhet}.
+
+\subsection*{Resette passord}
+Prosjektgruppen vurderer det som viktig at brukeren har mulighet til å resette passordet sitt selv dersom dette skulle være nødvendig. Azure AD har innebygget funksjonalitet for å løse dette på ulike måter. IdentityServer3 er ikke bygget for å støtte denne funksjonaliteten. Ettersom IdentityServer3 anbefales å implementeres i et ASP.NET MVC prosjekt så må vi ta utgangspunktet i mulighetene i denne typen prosjekter. ASP.NET MVC gir mange muligheter for implementasjon av ulike passord-resett løsninger. Alt må bygges selv, men det finnes guider og informasjon om dette på nettet.
+
+\subsection*{Tilkobling av applikasjoner}
+IdentityServer3 gir deg i prinsippet mulighet til å koble til alle applikasjoner som følger OpenID Connect protokollen. Azure AD har begrenset muligheten for tilkoblede applikasjoner til applikasjoner som allerede har en knytning til Azure. Azure har en rekke løsniger for å drifte eller koble til applikasjoner som en del av sine tjenester. 
+\\
+\\
+Vi har ikke valgt å gå i dybden på hvordan OAuth protokollen løser tilknytning mellom applikasjonsservere og identitetstilbydere. Da vi ser på denne utfordringen som løst av protokollen OAuth allerede. Begge løsningen baserer seg på OAuth sikkerhetsmekanismer. 
+
+\subsection*{Brukeradministrasjon}
+Azure AD har laget en egen portal hvor brukerne kan se egne tilganger og endre på egne brukerdata. Administratorer for Azure AD har per i dag tilgang til å endre på brukerdata og tilganger for alle brukere. Microsoft melder at de jobber med å implementere muligheten for flere rettighetsbegrensninger for administratorene i Azure AD. Dette gir muligheter til å endre brukeradministrasjon rettigheter til bare noen få brukere eller grupper.
+\\
+\\
+Etter hva prosjektgruppen har funnet ut gir IdentityServer3 kun mulighet for brukere som er logget inn til å se egne pågående autentiserte sesjoner. All funksjonalitet tilknyttet brukeradministrasjon, og tildeling av rettigheter utover å se pågående sesjoner må utvikles selv. For administrator rollen kan man velge å jobbe direkte på den valgte brukerdatabasen mens for brukerne anbefaler prosjektgruppen å bygge løsningen fra bunnen med utgangspunkt i en webportal.
+\\
+\\
+Azure AD gir ikke bedriftene store muligheter til å tilpasse brukeradministrasjons portalen. Selv om administrasjon av brukere både fra administrators synpunkt og brukers synpunkt kan virke oversiktlig. På en annen side så kan det tenkes at Norkart ønsker mulighet for et strengere sikkerhetsregime enn hva som leveres av Microsoft. Om Norkart bygger løsningen selv vil de ha mulighet til å bygge løsningen helt etter egne ønsker og spesifikasjoner. 
+
+\subsection{Vedlikehold}
+\label{sec:valgAvLosning_muligeLosninger_vedlikehold}
+Vedlikehold på en "ferdigløsning" man kjøper av andre, i forhold til en man utvikler og drifter selv vil være ulike. Azure AD skal vedlikeholdes av Microsoft. IdentityServer3 må vedlikeholdes av Norkart og eventuelt open source prosjektet det stammer fra. Begge løsningene er avhengig av at administratorer vedlikeholder selve brukerdatabasen og dette ser vi bortifra under denne seksjonen. 
+\\
+\\
+Hvor mye som trenger vedlikehold er vanskelig å si. Microsoft melder på sine Azure AD nettsider at de vil fortsette å slippe funksjonalitet i Azure AD i nærmeste framtid. IdentityServer3 er basert på å følge en standard til punkt og prikke, ikke mer ikke mindre. Dersom IdentityServer3 viser seg å være stabil, og inneholde lite feil, så vil denne kunne kjøre over lengre tid uten at man trenger å gjøre store grep. Usikkerheten rundt open source prosjekter i forhold til vedlikehold og oppdateringer vil alltid være til stede. Man kan ikke vite om prosjektet drives videre av frivillige eller ikke. Om prosjektet ikke drives videre kan man risikere å måtte sette seg inn i kildekoden og feilrette ting selv.
+\\
+\\
+Usikkerheten rundt tilgang på support og fagmiljø for open source prosjektet IdentityServer3 kan gjøre at det føles tryggere for en bedrift som Norkart å betale seg til support og løpende vedlikehold. Samtidig består Norkart av utviklere som besitter høy kompetanse innenfor mange områder. Derfor burde Norkart være i stand til å vedlikeholde kildekoden på et open source prosjekt som IdentityServer3 uten store problemer.
+
+\section{Valg av løsning}
+\label{sec:valgAvLosning_valgAvLosning}
+Product owner bestemte at prosjektgruppen skulle gå videre med Azure Active Directory i gjennomgangsmøtet etter sprint 1 (se veldegg \ref{app:MotereferaterSprint1_gjennomgangsmote} på side \pageref{app:MotereferaterSprint1_gjennomgangsmote}). Bakgrunnen for valget var at Azure AD virket som en god, ferdig løsning som allerede var ganske klar til bruk. Trolig vil også Azure AD bli mer klar de neste månedene etterhvert som Microsoft slipper ny funksjonalitet i løsningen. Norkart har allerede svært tette bånd til Microsoft og det er derfor ikke unaturlig at Norkart velger å ta i bruk deres løsninger for brukeradministrasjon og tilgangskontroll. Det vil være noen usikkerhetsmomenter som må avklares etter at løsningen er valgt, spesielt i forhold til hvor data lagres, og hva som lagres i brukerdatabasen. På tross av dette mener Norkart at tilgangen på support og samlingen av all funksjonalitet i en ferdig løsning er argumenter som står så sterkt at de skal tilpasse resten.
+
+\section{Fordeler og ulemper ved valgt løsning}
+\label{sec:valgAvLosning_fordelerOgUlemper}
+Norkart vil med Azure AD få en totalløsning de kun trenger å tilpasse etter eget bruk. Løsningen driftes av Microsoft mens Norkart vil ha full kontroll over hva som legges inn i brukerdatabasen og hvordan den settes opp. 
+\\
+\\
+Microsoft jobber med å ekspandere Azure AD til flere datasenetere i verden. I skrivende stund er det Nederland og Irland som har Microsoft datasentere som tilbyr Azure AD idag. Dette betyr at selve brukerdatabasen for applikasjonene Norkart knytter til sin Azure AD vil ligge på en server i Nederland eller Irland. Norkart vil se på hva dette betyr i forhold til lover og regler dersom pålogginginformasjon gjelder som persondata. 
+\\
+\\
+Microsoft har valgt å gi administratorer av Azure AD brukerdatabaser tilgang til deres egenutviklede sikkerhetsverktøy for overvåking av mistenkelig oppførsel i forhold til pålogging. Dette er et sett svært kraftige rapporteringsverktøyer som Azure AD administratorene kan velge å bruke som de ønsker. Verktøyet kan brukes som varsling, for å låse kontoer automatisk eller bare for å overvåke over.
+\\
+\\
+Det er som nevnt tidligere i kapittelet har Microsoft lagt inn noen begrensninger i hvilke applikasjoner man kan knytte til Azure AD. Utifra det prosjektgruppen kan se vil ikke dette være begrensninger Norkart ikke kan komme rundt. Mer om dette i kapittel \ref{chap:implementering}.
+\\
+\\
+Ettersom Norkart setter bort hele løsningen til andre koster dette penger. Kostnadene vil skalere i forhold til antall brukere og dette betyr at dersom Norkart tjener penger på mange brukere, så koster også løsningen mer. Skulle Norkart tape kunder, koster løsningen mindre.
+
+\subsection{I forhold til dagens situasjon}
+\label{sec:valgAvLosning_fordelerOgUlemper_iForholdtilDagensSituajson}
+Prosjektgruppen ønsker å trekke fram noen utvalgte punkter som beskriver forskjellem mellom Azure AD og dagens situasjon hos Norkart.
+\\
+\begin{itemize}
+\item Alle brukere er samlet i en database. Dette vil forenkle brukeradministrasjon og oversikt over kunder.
+\item Single point of failure. Om Azure AD går ned, vil ingen av applikasjonene til Norkart fungere. Dette hadde vært det samme for alternativ løsning. 
+\item Grunnlaget for enklere kontroll på antall lisenser og brukere for hver bedrift dere selger applikasjoner til.
+\item Minimalt driftsansvar for innlogging og brukeradministrasjon på applikasjoner norkart selger til kunder. 
+\end{itemize}
+
+
+\subsection{I forhold til alternativ løsning}
+\label{sec:valgAvLosning_fordelerOgUlemper_iForholdtilAlternativLosning}
+Prosjektgruppen ønsker å trekke fram noen få punkter for å presisere skille mellom valgt løsning og alternativ løsning.
+\\
+\begin{itemize}
+\item Azure AD er en ferdigutviklet løsning, IdentityServer3 er et rammeverk som det må bygges en løsning rundt før det kan tas i bruk.
+\item Azure AD fremstår for Norkart som kun en stor modul, IdentityServer3 hadde bestått av minst 3 moduler (se vedlegg \ref{app:IdentityServer3}) og dette skal i teorien forenkle feilsøking.
+\item Azure AD driftes, videreutvikles og vedlikeholdes av Microsoft, IdentityServer3 måtte utelukkende driftes, vedlikeholdes og videreutvikles av Norkart.
+\item Ny funksjonalitet og sikkerhetsoppdateringer slippes uten at sluttbrukere og administratorer trenger å merke store endringer. Azure AD skal etter det Microsoft hevder, bare bli bedre og bedre for administratorer og sluttbrukere. IdentityServer3 ville vært en mer statisk løsning som trolig ikke hadde gjennomgått store endringer før Norkart mente det var behov for dette.
+\end{itemize}
+
+\section{Behov for avklaringer etter valgt løsning}
+\label{sec:valgAvLosing_behovForAvklaringerEtterValgtLosning}
+Etter at Product Owner og prosjektgruppen har jobbet seg fram mot valg av en løsning, og når valget er tatt, skal prosjektgruppen i de neste kapitlene svare på en del spørsmål som vil dukke opp når Norkart skal implementere Azure AD mot sine applikasjoner. Kapittel \ref{chap:konfigurasjon} vil i hovedsak dreie seg om å besvare spørsmål og beskrive utfordringer Norkart ønsker kunnskap om.
+
+\begin{itemize}
+\item Identifiserte hensyn som må tas når man setter opp en Azure AD
+\item Beskrivelse av enkleste form for autentiseringbruk for en applikasjon.
+\item Beskrivelse av anbefalte from for autentiseringsbruk for en applikasjon.
+\item Hvordan Norkart kan bruke Azure AD i forhold til og dele opp roller, tilganger og tilgangsgrupper.
+\item Hva vil løsningen koste ved ulike mengder brukere og oppsett. 
+\item Hvordan brukere enklest mulig knytter seg til systemet.
+\item Hvilken funksjonalitet har Azure AD idag som ikke benyttes og hva vet man om funksjonalitet som kommer. 
+\end{itemize}

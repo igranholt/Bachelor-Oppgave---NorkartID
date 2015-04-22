@@ -1,0 +1,114 @@
+\chapter{Innledning}
+\label{innledning}
+Dette kapittelet har til hensikt å innlede rapporten, beskrive oppgaven og rapportens struktur. Kapittelet vil også si noe om prosjektets endringer, og hvordan dette har preget prosjektet og rapporten. Prosjektet går ut på og kartlegge og skissere en autentiseringsløsning som vil bli omtalt som både autentiseringsløsningen, løsningen og NorkartID igjennom rapporten.
+   
+\section{Organisering av rapporten}
+\label{sec:innledning_organiseringAvRapporten}
+Første kapittel har til hensikt å sette rapportleser inn i oppgaven, prosjektarbeidet og rapportens oppbygning. Deretter har vi valgt å legge ved kravspesifikasjonen prosjektgruppen laget til prosjektets oppgave. Hvorfor denne er laget beskrives i innledningen til kapittel \ref{chap:kravspesifikasjon}.
+\\
+\\
+Prosjektet og prosjektets problemstilling dreier seg om å sette seg inn i helt ny teknologi. For å forstå teknologien, mulighetene og begrensningene har vi valgt å dedikere et kapittel til ren teori. Kapittel \ref{chap:teoridel} er teori og introduksjon av ulike teknologier som brukes eller kan brukes som en del av problemstillingens løsning.
+\\
+\\
+I kapittelene \ref{chap:valgAvLosning} (\nameref{chap:valgAvLosning}), \ref{chap:konfigurasjon} (\nameref{chap:konfigurasjon}) og \ref{chap:testing} (\nameref{chap:testing}) drøftes ulike problemstillinger relatert til oppgavens overordnede problemstilling. Her kombineres teori, drøfting, og argumentasjon for å belyse valg prosjektgruppen har tatt i løpet av prosjektet, og valg oppdragsgiver må ta når løsningen skal implementeres etter endt prosjektperiode. I kapittel \ref{chap:diskusjonAvResultater} (\nameref{chap:diskusjonAvResultater}) ønsker vi å vurdere om løsningen som er valgt ved endt prosjektperiode tilfredstiller kravspesifikasjonen (kapittel \ref{chap:kravspesifikasjon}) og problemstilling (delkapittel \ref{sec:innledning_oppgaven}). Kapittel \ref{chap:veiledninger} (\nameref{chap:veiledninger}) består av to brukerveiledninger for implementasjon av valgt autentiseringsløsning mot en webapplikasjon og en android applikasjon. Dette kapittelet kunne ligget som vedlegg, men etter anbefaling fra veileder har prosjektgruppen valgt å legge det inn som et eget kapittel i rapporten.
+\\
+\\
+\subsection*{Todelt rapport}
+Etter anbefaling fra veileder har vi valgt å ta med to kapitler gruppen jobbet mye med før prosjektoppgaven ble gjort om. Disse har vi valgt å legge som kapittel \ref{chap:kravspesifikasjonGammel} og \ref{chap:IdentityServer3} i rapporten. Kapittel \ref{chap:kravspesifikasjonGammel} er den opprinnelige kravspesifikasjonen som ble laget med tanke på at prosjektgruppen skulle utvikle autentiseringsløsningen nesten fra bunnen. Kapittel \ref{chap:IdentityServer3} beskriver hvordan gruppen planla og designe og implementere ulik funksjonalitet i autentiseringsløsningen om vi skulle utviklet løsningen selv. Disse to kapitlene har ikke noe med den gjeldene rapporten å gjøre, men er tatt med for og vise at vi jobbet på en helt annen kurs før oppgaven endret seg, les mer om endringen i punkt \ref{sec:innledning_endringAvOppgaven}.
+\\
+\\
+Det er lagt ved flere vedlegg til rapporten. Dette er arbeidsmaterialet som enten er arbeidskrav i forhold til bacheloroppgaven gitt av Høgskolen i Gjøvik eller utdrag fra arbeid vi har gjort som ikke passer direkte inn i rapporten, men som vi fortsatt vurderer som relevant.
+
+\section{Oppgaven}
+\label{sec:innledning_oppgaven}
+Prosjektgruppen skal definere, skisse opp, planlegge og teste en ny autentiseringstjeneste (se  \ref{sec:innledning_terminologi} for autentisering) for Norkart. Løsningen skal inneholde webgrensesnitt for sluttbruker og administrasjonsgrensesnitt for lokale superbrukere, Norkart kundestøtte og driftstjeneste. Oppgaven innebærer å vurdere aktuelle tekniske rammeverk og benytte disse til å sette sammen tjenesten. Autentiseringsløsnignen skal gi brukere mulighet til å bruke samme brukernavn og passord på alle Norkart applikasjonene brukeren har kjøpt tilgang til å bruke.
+\\
+\\
+Oppgaven skal deles i to deler. Første del er å definere krav og finne en løsning som vil passe til kravene. Del to er å beskrive implementasjon og mulige løsninger på utfordringer Norkart vil møte når de senere skal implementere Norkart ID for sine kunder.
+\\
+\\
+Norkart planlegger å gjennomføre et prosjekt for å implementere autentiseringsløsningen mot sine systemer høsten 2015 og ser på dette bachelorprosjektet som et forprosjekt, en kickstart, på dette.
+
+\subsection{Oppdragsgiver før prosjektet}
+\label{subsec:innledning_oppdragsgiverForProsjekt}
+Norkart har tidligere hatt en autentiseringsløsning for hver enkelt applikasjon de har levert til sine kunder. Autentiseringsmekanismer og sikkerhet har ikke blitt prioritert like høyt som funksjonalitet i selve applikasjonen. Norkart har også ytret bekymring over noen av applikasjonene har autentiseringsløsninger som er implementert på usikre måter.
+
+
+\section{Målgruppe for rapporten}
+\label{sec:innledning_malgruppeForRapporten}
+Rapporten er skrevet for teknisk personell. Målgruppen for rapporten er utviklere og produkteiere hos Norkart. Varierende kunnskap blant utviklere i forhold til ulike teknologier som beskrives i prosjektet er en av grunnene til at prosjektgruppen har valgt å lage et teorikapittel. Dette skal gi leserne mulighet til relevant og konsentrert informasjon om de teknologiene som er beskrevet. 
+\\
+\\
+For å definere en "nedre grense" for hva prosjektgruppen forventer Norkart utviklerne kjenner til, er det valgt å ta utgangspunkt i bachelorstudenter ved Høgskolen i Gjøvik sitt standpunkt. Rapporten forsøker å inneholde tilstrekkelig informasjon til at bachelorstudenter innen informasjonsteknologi i avsluttende semester skal kunne forstå innholdet i rapporten. 
+
+\section{Prosjektgruppens faglige bakgrunn}
+\label{sec:innledning_prosjektgruppensFagligeBakgrunn}
+Prosjektgruppen består av tre studenter med svært ulik faglig bakgrunn. Dette delkapittelet er lagt inn for å fremheve prosjektgruppens sammensetning av faglig bakgrunn og er en kort beskrivelse av hvert gruppemedlem for å tydeliggjøre forskjellene. Gruppemedlemmene er fra tre ulike linjer ved Høgskolen i Gjøvik.
+
+\subsection*{Alf Hammerseth}
+Gikk Fagskolen i Innlandet Avdeling Gjøvik før han begynte på Høgskolen i Gjøvik. Går ingeniørfag data ved Høgskolen i Gjøvik når denne oppgaven skrives. Har fordypet seg i programmering i valgfagene. Valgfagsemesteret ble gjennomført ved University of Wollongong i Wollongong, Australia. Er interessert i drift av servermiljøer og programmering som fagfelt.
+
+\subsection*{Ida Granholdt}
+Har en bachelor i grafisk design fra før hun begynte på Høgskolen i Gjøvik.
+Går webutvikling linjen ved Høgskolen i Gjøvik når denne oppgaven skrives. Har fordypet seg i blant annet programmering. Er interessert i design, webutvikling og programmering som fagfelt. 
+
+\subsection*{Per Christian Kofstad}
+Har tidligere jobbet 6 år i forsvaret som sambandsspesialist med fokusområdet på sikkerhet. 
+Går informasjonssikkerhet ved Høgskolen i Gjøvik når denne oppgaven skrives. Har fordypet seg i programmering i valgfagene under studiet. Har under studietiden hatt deltidsjobb som Sambandsansvarlig i en innsatsstyrke i Heimevernet. Interessert i programvareutvikling og sikkerhet som fagfelt. 
+
+\subsection*{Samlet nivå}
+Prosjektgruppen tok selv initiativet til å jobbe på tvers av linjene. Ingen av gruppemedlemmene har tidligere fordypet seg i teknologier som brukes for autentisering av brukere. Innstillingen til prosjektet var at prosjektgruppen ønsket å lære om teknologier i forhold til autentisering, implementasjon og autentiseringsløsnigner. 
+
+\section{Prosjektgruppens valgte arbeidsform}
+\label{sec:innledning_prosjekgruppensValgteArbeidsform}
+Prosjektgruppen valgte å jobbe etter en arbeidsmetodikk som kombinerte elementer fra Scrum og Lean Startup. For å beskrive hvordan prosjektgruppen kombinerte arbeidsmetodikkene laget prosjektgruppen et eget skriv i begynnelsen av prosjekt. Dette skrivet ligger som vedlegg \ref{app:arbeidsmetode}. Arbeidsmetodikken kort oppsummerter innebærer å bruke møtene og strukturen rundt iterasjoner fra Scrum, mens innholdet i iterasjonene, spesielt MVP (minimum valuable product) er fra "Lean Startup". 
+
+\subsection{Erfaringer}
+\label{sec:innledning_prosjekgruppensValgteArbeidsform_erfaringer}
+Prosjektgruppen bestemte seg etter de første iterasjonene om å korte ned tid brukt på møter. Framfor å ha tre ulike møter ved slutten av en sprint og oppstart av en ny ( se vedlegg \ref{app:arbeidsmetode} ).Gruppen valgte å slå sammen dette til et møte, men referatførte det som ulike møter, som oppgitt i planen. 
+\\
+\\
+I tillegg erfarte prosjektgruppen at selv om det var definert en smidig utviklingsmodell med bruk av MVP iterasjoner så ble det ikke definert klare MVP mål før utviklingperioden skulle begynne. Prosjektgruppen er i tvil om gruppen hadde oppdaget tingene som førte til endringer underveis i prosjektet om MVP målene var tydeligere helt fra starten av prosjektperioden. Dette kunne potensielt ført til at endringen i prosjektets problemstilling kunne kommet på et tidligere tidspunkt enn hva den gjorde. Det vil bli drøftet mer rundt dette i kapittel \ref{chap:konklusjon} \nameref{chap:konklusjon}.
+\\
+\\
+I forhold å definere oppgaver ("tasks") i en iterasjon begynte prosjektgruppen med å kun ta utgangspunkt i hva som skulle produseres av kode, kunnskap og research. Rapporten og administrativt arbeid kom alltid i tillegg. Etter endringene i oppgaven begynte vi å inkludere rapportarbeid og administrative oppgaver som en del av oppgavene under en iterasjon. Dette bidro til en mer naturlig nedgående kurve for pågående og gjenstående arbeid.
+\\
+\\
+Etter at problemstillingen endret seg halvveis i prosjektperioden (se punkt \ref{sec:innledning_endringAvOppgaven}) bestemte prosjektgruppen seg for å fjerne MVP elementet fra arbeidsmetodikken og kun operere med fast lengde på iterasjonene, men fortsatt ha klare mål om hva som skulle ferdigstilles. Dette gjorde at utviklingsmetoden for prosjektgruppen ble lignende veldig på Scrum.
+
+\section{Endring av oppgaven}
+\label{sec:innledning_endringAvOppgaven}
+Fram til Sprint-gjennomgangsmøte vi hadde 5/3-2015 (se veldegg \ref{app:MotereferaterSprint1_gjennomgangsmote} for referat ) var prosjektgruppen av den oppfatning at gruppen skulle programmere og utvikle en autentiseringsløsning. Under dette møtet ble prosjektoppgaven endret fra å undersøke og utvikle en løsning, til å sette oss inn i muligheter, begrensninger og mulige konfigurasjoner av Azure Active Directory (Azure AD) fra Microsoft. (se kapittel \ref{chap:valgAvLosning} for begrunnelse for valg av løsning). Azure AD er en ferdigløsning som inneholder mye av det vi som prosjektgruppe hadde planlagt og utvikle selv når vi planla og utvikle NorkartID med utgangspunkt i rammeverket IdentityServer3 (se \ref{sec:teoridel_identityServer3}), slik vi gjorde i begynnelsen av prosjektperioden. 
+\\
+\\
+Hverken veiledere, kontaktpersoner hos Norkart eller andre ressurspersoner kjente til mulighetene i Azure helt fram til prosjektgruppen begynte på sprint 1. Prosjektgruppen jobbet kontinuerlig med å kartlegge muligheter og begrensninger i Azure parallelt med å kartlegge andre teknologier. Prosjektgruppen innså at en slik helomvending ville være en av følgene ved å jobbe under en MVP (minimum valuable product) utviklingsmetode (beskrevet i \ref{sec:innledning_prosjekgruppensValgteArbeidsform}). Oppdragsgiver Norkart var svært forøyd med hva prosjektgruppen fant ut og dette gjorde deres implementasjon trolig mye enklere. For prosjektgruppen endret dette oppgaven i svært stor grad, i forhold til hva gruppen hadde sett for seg. 
+\\
+\\
+Oppgaven angitt i punkt \ref{sec:innledning_oppgaven} er endret til hva oppdragsgiver og prosjektgruppen definerte oppgaven til å være etter endringen. Oppgaven før endringen var mer fokusert mot utvikling av en autentiseringsløsning, og en styring på bruk av OpenID Connect som protokoll. Etter endringen kom prosjektgruppen i samråd med oppdragsgiver fram til at pressisering av OpenID Connect protokollen bortfaller. Bakgrunn for dette var at Azure AD støtter flere protokoller som er akutelle for oppdragsgiver og bruke, avhengig av senario og type applikasjon som skal brukes mot løsningen.
+\\
+\\
+Fram til denne endringen hadde prosjektgruppen fokusert på en løsning hvor det skulle brukes et rammeverk kalt IdentityServer3 (se kapittel \ref{sec:teoridel_identityServer3}) og det ble gjort mye jobb med kravspesifikasjon, brukeropplevelse og systemdesign. Mye av dette arbeidet er ikke tatt med i selve rapporten, men er lagt ved som vedlegg \ref{app:IdentityServer3} ettersom vi ser dette som relevant i forhold til å kunne sammenligne IdentityServer3 med Azure Active Directory. 
+\\
+\\
+Det ble foreslått å endre prosjektet enda en gang i midten av April. Denne gangen ved å legge inn en egenlaget brukeradministrasjon portal i steden for å bruke den som allerede er laget av Microsoft Azure teamet. Prosjektgruppen bestemte seg for ikke å gjøre dette grunnet tidsbegrensning, men å jobbe videre med problemstillingen de allerede var på.
+
+\section{Terminologibruk}
+\label{sec:innledning_terminologi}
+Beskrivelser og betegnelser som brukes spesifikt i rapporten er spesifikt ramset opp her for presisering.
+\\
+\begin{itemize}
+\item \textbf{Bruker, sluttbruker, aktør} Begegnelse for en som bruker systemet NorkartID fra en kundes synpunkt. Altså en som bruker systemet men ikke er ansatt i Norkart, eller på noen annen måte har utvidede rettigheter til NorkartID.
+
+
+\item \textbf{Prosjektgruppen, Gruppen, Vi} Studentene i bachelorgruppen som jobber med prosjektet.
+
+\item \textbf{Kontaktpersoner hos Norkart} Ressurspersoner som er knyttet til prosjektet og som deltar på demo, status møter og svarer prosjektgruppen på mail. Hovedsakelig veileder og product owner hos Norkart. 
+
+\item \textbf{Autentiseringsløsning, autentisering, NorkartID} Enten en portal, et system eller server som lar brukere logge seg på med brukernavn og passord for å få tilgang til en eller flere applikasjoner. Se delkapittel \ref{sec:teoridel_autentisering} for mer informasjon om \nameref{sec:teoridel_autentisering}.
+
+\item \textbf{Brukerguide} Tilsvarende betydning som det engelske ordet: toturial. 
+
+\item \textbf{Single Sign On} Et begrep som brukes for å beskrive at man med et brukernavn og passord kan logge på flere applikasjoner ved kun og skrive inn brukernavn og passord en gang.  
+
+\item \textbf{Azure Active Directory, Azure AD, AAD} Navnet på Active Directory løsnigen til Azure. 
+\end{itemize}
